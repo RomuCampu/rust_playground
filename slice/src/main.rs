@@ -20,6 +20,9 @@ fn main() {
     println!("{}", &word);
 
 
+    slice_array();
+
+
 }
 
 fn first_word(s: &str) -> &str {
@@ -34,24 +37,13 @@ fn first_word(s: &str) -> &str {
     &s[..]
 }
 
+fn slice_array() {
+  let a = [1, 2, 3, 4, 5, 6];
 
+  let slice = &a[1..3];
 
+  assert_eq!(slice, &[2, 3]);
 
-
-
-
-
-
-
-
-
-// fn first_word(s: &String) -> usize {
-//     let bytes = s.as_bytes();
-
-//     for (i, &item) in bytes.iter().enumerate() {
-//         if item == b' ' {
-//             return i;
-//         }
-//     }
-//     s.len()
-// }
+  println!("{}", &slice[0]);
+  println!("{}", &slice[1]);
+}
